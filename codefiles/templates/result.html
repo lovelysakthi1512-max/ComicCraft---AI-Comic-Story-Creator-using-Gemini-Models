@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>ComicCraft Result</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body><main class="card">
+<h1>{{ story.title }}</h1><p>{{ story.subtitle }}</p>
+<img class="comic" src="{{ comic_url }}">
+<h2>Panels</h2>
+{% for p in story.panels %}
+<section class="panel"><h3>Panel {{ p.panel_number }}</h3><p><b>{{ p.caption }}</b></p><p>{{ p.dialogue }}</p><img src="{{ p.image_url }}"></section>
+{% endfor %}
+<a class="button" href="{{ pdf_url }}" target="_blank">Open PDF</a>
+<a class="button secondary" href="/">Create another comic</a>
+</main></body></html>
